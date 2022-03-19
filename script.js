@@ -55,8 +55,8 @@ function game() {
        make sure it is not case sensitive use - variableName.toUpperCase() on the playerSelection variable */
     const message = prompt('ROCK, PAPER, OR SCISSORS?').toUpperCase();
     const output = (`Player: ${message}
-    Bot Choice: ${computerPlay()}
-    ${roundWinner(message)}`);
+Bot Choice: ${computerPlay()}
+${roundWinner(message)}`);
     console.log(output); 
 };
 // to make the game loop just put the game function in a for loop
