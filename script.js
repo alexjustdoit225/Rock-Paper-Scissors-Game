@@ -16,10 +16,13 @@ computerPlay();
 
 // write a function that plays one round of rock, paper, scissors
 function oneRound() {
-    // create playerSelection variable that prompts the user to enter rock, paper, or scissors
-        // make sure it is not case sensitive use - variableName.toUpperCase() on the playerSelection variable
+    /* create playerSelection variable that prompts the user to enter rock, paper, or scissors
+       make sure it is not case sensitive use - variableName.toUpperCase() on the playerSelection variable */
     let playerSelection = prompt('ROCK, PAPER, OR SCISSORS?').toUpperCase(); 
     // store the string that states who won the round 
+    let roundWinnerText; 
+    // create if statements to determine what the roundWinnerText variable will say 
+    
     // return the string that declares the winner of the round 
 };
 oneRound(); 
