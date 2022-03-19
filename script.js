@@ -18,9 +18,11 @@ computerPlay();
 function oneRound() {
     // create playerSelection variable that prompts the user to enter rock, paper, or scissors
         // make sure it is not case sensitive use - variableName.toUpperCase() on the playerSelection variable
+    let playerSelection = prompt('ROCK, PAPER, OR SCISSORS?').toUpperCase(); 
     // store the string that states who won the round 
     // return the string that declares the winner of the round 
-}
+};
+oneRound(); 
 
 /* idea; make a function called prompt that prompts the user and takes 
    in the parameter of a message, so that you can use the prompt() function throughout your code */
