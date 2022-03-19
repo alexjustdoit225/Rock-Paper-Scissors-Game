@@ -13,48 +13,51 @@ function computerPlay() {
 
 /* create a function called prompt that prompts the user and takes 
    in the parameter of a message, so that you can use the prompt() function throughout your code */
-function message() {
-    /* create playerSelection variable that prompts the user to enter rock, paper, or scissors
-       make sure it is not case sensitive use - variableName.toUpperCase() on the playerSelection variable */
-    let message = prompt('ROCK, PAPER, OR SCISSORS?').toUpperCase();
-    console.log(`Player: ${message}`);
-    return message; 
-}
+// function message() {
+//     /* create playerSelection variable that prompts the user to enter rock, paper, or scissors
+//        make sure it is not case sensitive use - variableName.toUpperCase() on the playerSelection variable */
+//     let message = prompt('ROCK, PAPER, OR SCISSORS?').toUpperCase();
+//     console.log(`Player: ${message}`);
+//     return message; 
+// }
 
 // write a function that plays one round of rock, paper, scissors and returns the round winner text
-function oneRound(playerSelection) {
-    // store the string that states who won the round 
-    let roundWinnerText; 
+function roundWinner(playerSelection) { 
     // create if statements to determine what the roundWinnerText variable will say 
-    if (computerPlay() === 'ROCK' &&  playerSelection === 'PAPER'){
-        roundWinnerText = 'You Win! Paper covers rock.';
+    if ((computerPlay() === 'ROCK') &&  (playerSelection === 'PAPER')){
+        return 'You Win! Paper covers rock.';
     }
-    else if (computerPlay() === 'ROCK' && playerSelection === 'SCISSORS'){
-        roundWinnerText = 'You Lose! Rock smashes scissors.';
+    else if ((computerPlay() === 'ROCK') && (playerSelection === 'SCISSORS')){
+        return 'You Lose! Rock smashes scissors.';
     }
-    else if (computerPlay() === 'PAPER' && playerSelection === 'SCISSORS'){
-        roundWinnerText = 'You Win! Scissors slices paper.';
+    else if ((computerPlay() === 'PAPER') && (playerSelection === 'SCISSORS')){
+        return 'You Win! Scissors slices paper.';
     }
-    else if (computerPlay() === 'PAPER' && playerSelection === 'ROCK'){
-        roundWinnerText = 'You Lose! Paper cover rock.'; 
+    else if ((computerPlay() === 'PAPER') && (playerSelection === 'ROCK')){
+        return 'You Lose! Paper cover rock.'; 
     }
-    else if (computerPlay() === 'SCISSORS' && playerSelection === 'ROCK'){
-        roundWinnerText = 'You Win! Rock smashes scissors.';
+    else if ((computerPlay() === 'SCISSORS') && (playerSelection === 'ROCK')){
+        return 'You Win! Rock smashes scissors.';
     }
-    else if (computerPlay() === 'SCISSORS' && playerSelection === 'PAPER'){
-        roundWinnerText = 'You Lose! Scissors slices paper.';
+    else if ((computerPlay() === 'SCISSORS') && (playerSelection === 'PAPER')){
+        return 'You Lose! Scissors slices paper.';
+    } 
+    else if ((computerPlay() === playerSelection)) {
+        return `It's a tie.`
     }
-    // return the string that declares the winner of the round 
-    console.log(roundWinnerText); 
+    else {
+        return `You did not pick ROCK, PAPER, or SCISSORS.`
+    }
 };
 
 function game() {
     /* create playerSelection variable that prompts the user to enter rock, paper, or scissors
        make sure it is not case sensitive use - variableName.toUpperCase() on the playerSelection variable */
     const message = prompt('ROCK, PAPER, OR SCISSORS?').toUpperCase();
-    console.log(`Player: ${message}`);
-    computerPlay();
-    console.log(`Bot Choice: ${computerPlay()}`); 
-    oneRound(message);
-}
+    const output = (`Player: ${message}
+    Bot Choice: ${computerPlay()}
+    ${roundWinner(message)}`);
+    console.log(output); 
+};
+// to make the game loop just put the game function in a for loop
 game(); 
