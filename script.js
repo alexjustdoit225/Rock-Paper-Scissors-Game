@@ -1,7 +1,7 @@
 // create an array storing rock, paper, scissors
 const choices = ['ROCK', 'PAPER', 'SCISSORS']; 
 let userChoice; 
-let computerChoice;
+let computerChoice = generateComputerChoice();
 let popUpMessage;  
 
 function generateComputerChoice() {
@@ -11,7 +11,6 @@ function generateComputerChoice() {
     //choice should return rock, paper, or scissors
     return choices[randNum];  
 };
-generateComputerChoice() 
 
 /* create a function called prompt that prompts the user and takes 
    in the parameter of a message, so that you can use the prompt() function throughout your code */
