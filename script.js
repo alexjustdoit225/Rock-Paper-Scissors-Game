@@ -7,7 +7,7 @@ let popUpMessage;
 function generateComputerChoice() {
     // create a variable that stores a random number between 0 and 2
     const randNum = Math.floor(Math.random()*3);  
-    console.log(choices[randNum]); 
+    // console.log(choices[randNum]); 
     //choice should return rock, paper, or scissors
     return choices[randNum];  
 };
