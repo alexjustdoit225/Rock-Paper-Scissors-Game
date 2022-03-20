@@ -1,7 +1,7 @@
 // create an array storing rock, paper, scissors
 const choices = ['ROCK', 'PAPER', 'SCISSORS']; 
 let computerChoice = generateComputerChoice();
-let userChoice; 
+let userChoice = message(); 
 let popUpMessage;  
 
 function generateComputerChoice() {
@@ -19,21 +19,27 @@ function message() {
        make sure it is not case sensitive use - variableName.toUpperCase() on the playerSelection variable */
     let message = prompt('ROCK, PAPER, OR SCISSORS?').toUpperCase();
     message = message.toUpperCase();
-    console.log(message);
+   
     return message; 
 }
-message();
+
+
+//  // ERROR HANDLING
+//  if ((message !== 'ROCK'.toUpperCase()) || (message !== 'PAPER'.toUpperCase()) || (message !== 'SCISSORS'.toUpperCase())) {
+//     console.log('You did not type ROCK, PAPER, or SCISSORS. Try Again'); 
+//     this.message(); 
+// }
 
 // write a function that plays one round of rock, paper, scissors and returns the round winner text
 function roundWinner(playerSelection) { 
     const computerSelection = computerPlay();
     // create if statements to determine what the roundWinnerText variable will say 
     if ((computerSelection === 'ROCK') && (playerSelection === 'PAPER')){
-        console.log(computerSelection);
+        // console.log(computerSelection);
         return 'You Win! Paper covers rock.';
     }
     else if ((computerSelection === 'ROCK') && (playerSelection === 'SCISSORS')){
-        console.log(computerSelection)
+        // console.log(computerSelection)
         return 'You Lose! Rock smashes scissors.';
     }
     // else if ((computerSelection === 'PAPER') && (playerSelection === 'SCISSORS')){
