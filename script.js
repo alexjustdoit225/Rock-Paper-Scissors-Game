@@ -2,74 +2,57 @@
 const choices = ['ROCK', 'PAPER', 'SCISSORS']; 
 let computerChoice = generateComputerChoice();
 let userChoice = message(); 
-let popUpMessage;  
+let winner = roundWinner(userChoice, computerChoice); 
+let finalMessage = `Player: ${userChoice}
+Bot Choice: ${computerChoice}
+${winner}`;  
 
 function generateComputerChoice() {
     // create a variable that stores a random number between 0 and 2
     const randNum = Math.floor(Math.random()*3);  
-    // console.log(choices[randNum]); 
-    //choice should return rock, paper, or scissors
     return choices[randNum];  
 };
 
-/* create a function called prompt that prompts the user and takes 
-   in the parameter of a message, so that you can use the prompt() function throughout your code */
+// create a function that prompts the user and returns the message 
 function message() {
-    /* create playerSelection variable that prompts the user to enter rock, paper, or scissors
-       make sure it is not case sensitive use - variableName.toUpperCase() on the playerSelection variable */
-    let message = prompt('ROCK, PAPER, OR SCISSORS?').toUpperCase();
-    message = message.toUpperCase();
-   
+    /* create playerSelection variable that prompts the user to enter rock, paper, or scissors */
+    let message = prompt('ROCK, PAPER, OR SCISSORS?');
     return message; 
 }
 
-
-//  // ERROR HANDLING
-//  if ((message !== 'ROCK'.toUpperCase()) || (message !== 'PAPER'.toUpperCase()) || (message !== 'SCISSORS'.toUpperCase())) {
-//     console.log('You did not type ROCK, PAPER, or SCISSORS. Try Again'); 
-//     this.message(); 
-// }
-
 // write a function that plays one round of rock, paper, scissors and returns the round winner text
-function roundWinner(playerSelection) { 
-    const computerSelection = computerPlay();
+function roundWinner(userChoice, computerChoice) { 
     // create if statements to determine what the roundWinnerText variable will say 
-    if ((computerSelection === 'ROCK') && (playerSelection === 'PAPER')){
-        // console.log(computerSelection);
+    if ((computerChoice === 'ROCK') && (userChoice === 'PAPER')){
         return 'You Win! Paper covers rock.';
     }
-    else if ((computerSelection === 'ROCK') && (playerSelection === 'SCISSORS')){
-        // console.log(computerSelection)
+    else if ((computerChoice === 'ROCK') && (userChoice === 'SCISSORS')){
         return 'You Lose! Rock smashes scissors.';
     }
-    // else if ((computerSelection === 'PAPER') && (playerSelection === 'SCISSORS')){
-    //     return 'You Win! Scissors slices paper.';
-    // }
-    // else if ((computerSelection === 'PAPER') && (playerSelection === 'ROCK')){
-    //     return 'You Lose! Paper cover rock.'; 
-    // }
-    // else if ((computerSelection === 'SCISSORS') && (playerSelection === 'ROCK')){
-    //     return 'You Win! Rock smashes scissors.';
-    // }
-    // else if ((computerSelection === 'SCISSORS') && (playerSelection === 'PAPER')){
-    //     return 'You Lose! Scissors slices paper.';
-    // } 
-    // else if ((computerSelection === playerSelection)) {
-    //     return `It's a tie.`
-    // }
+    else if ((computerChoice === 'PAPER') && (userChoice === 'SCISSORS')){
+        return 'You Win! Scissors slices paper.';
+    }
+    else if ((computerChoice === 'PAPER') && (userChoice === 'ROCK')){
+        return 'You Lose! Paper cover rock.'; 
+    }
+    else if ((computerChoice === 'SCISSORS') && (userChoice === 'ROCK')){
+        return 'You Win! Rock smashes scissors.';
+    }
+    else if ((computerChoice === 'SCISSORS') && (userChoice === 'PAPER')){
+        return 'You Lose! Scissors slices paper.';
+    } 
+    else if ((computerChoice === userChoice)) {
+        return `It's a tie.`
+    }
     else {
         return `You did not pick ROCK, PAPER, or SCISSORS.`
     }
 };
 
+console.log(finalMessage); 
 
-// function game() { 
-//     let playerSelection = message();     
-//     // const message = prompt('ROCK, PAPER, OR SCISSORS?').toUpperCase();
-//     const output = (`Player: ${playerSelection}
-// Bot Choice: ${computerPlay()}
-// ${roundWinner(playerSelection)}`);
-//     console.log(output); 
+//  // ERROR HANDLING
+//  if ((userChoice !== 'rock'.toUpperCase()) || (message !== 'paper'.toUpperCase()) || (message !== 'scissors'.toUpperCase())) {
+//     console.log('You did not type ROCK, PAPER, or SCISSORS. Try Again'); 
+//     message(); 
 // };
-// // to make the game loop just put the game function in a for loop
-// game(); 
