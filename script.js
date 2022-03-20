@@ -1,7 +1,7 @@
 // create an array storing rock, paper, scissors
 const choices = ['ROCK', 'PAPER', 'SCISSORS']; 
-let userChoice; 
 let computerChoice = generateComputerChoice();
+let userChoice; 
 let popUpMessage;  
 
 function generateComputerChoice() {
@@ -17,9 +17,12 @@ function generateComputerChoice() {
 function message() {
     /* create playerSelection variable that prompts the user to enter rock, paper, or scissors
        make sure it is not case sensitive use - variableName.toUpperCase() on the playerSelection variable */
-    const message = prompt('ROCK, PAPER, OR SCISSORS?').toUpperCase();
+    let message = prompt('ROCK, PAPER, OR SCISSORS?').toUpperCase();
+    message = message.toUpperCase();
+    console.log(message);
     return message; 
 }
+message();
 
 // write a function that plays one round of rock, paper, scissors and returns the round winner text
 function roundWinner(playerSelection) { 
