@@ -49,6 +49,10 @@ function roundWinner(userChoice, computerChoice) {
     }
 };
 
+function oneRound() {
+    
+}
+
 console.log(finalMessage); 
 
 //  // ERROR HANDLING
