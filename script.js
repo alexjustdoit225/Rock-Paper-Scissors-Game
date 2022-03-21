@@ -1,7 +1,7 @@
-// create an array storing rock, paper, scissors
-const choices = ['ROCK', 'PAPER', 'SCISSORS']; 
-
 function generateComputerChoice() {
+    // create an array storing rock, paper, scissors
+    const choices = ['ROCK', 'PAPER', 'SCISSORS']; 
+
     // create a variable that stores a random number between 0 and 2
     const randNum = Math.floor(Math.random()*3);  
     return choices[randNum];  
