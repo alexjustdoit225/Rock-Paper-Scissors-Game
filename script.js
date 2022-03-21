@@ -53,7 +53,7 @@ Bot Choice: ${computerChoice}
 ${winner}`;  
     console.log(finalMessage); 
 }
- 
+// plays five rounds
 for (i = 0; i < 5; i++) {
     oneRound();
 }
