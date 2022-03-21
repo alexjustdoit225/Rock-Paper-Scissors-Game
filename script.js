@@ -1,11 +1,5 @@
 // create an array storing rock, paper, scissors
 const choices = ['ROCK', 'PAPER', 'SCISSORS']; 
-let computerChoice = generateComputerChoice();
-let userChoice = message(); 
-let winner = roundWinner(userChoice, computerChoice); 
-let finalMessage = `Player: ${userChoice}
-Bot Choice: ${computerChoice}
-${winner}`;  
 
 function generateComputerChoice() {
     // create a variable that stores a random number between 0 and 2
@@ -49,11 +43,20 @@ function roundWinner(userChoice, computerChoice) {
     }
 };
 
+// plays one round of rock paper scissors
 function oneRound() {
-    
+    let computerChoice = generateComputerChoice();
+    let userChoice = message(); 
+    let winner = roundWinner(userChoice, computerChoice); 
+    let finalMessage = `Player: ${userChoice}
+Bot Choice: ${computerChoice}
+${winner}`;  
+    console.log(finalMessage); 
 }
-
-console.log(finalMessage); 
+ 
+for (i = 0; i < 5; i++) {
+    oneRound();
+}
 
 //  // ERROR HANDLING
 //  if ((userChoice !== 'rock'.toUpperCase()) || (message !== 'paper'.toUpperCase()) || (message !== 'scissors'.toUpperCase())) {
