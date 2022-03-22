@@ -53,10 +53,16 @@ Bot Choice: ${computerChoice}
 ${winner}`;  
     console.log(finalMessage); 
 }
-// plays five rounds
-for (i = 0; i < 5; i++) {
-    oneRound();
-}
+// // plays five rounds
+// for (i = 0; i < 5; i++) {
+//     oneRound();
+// }
+
+const btns = document.querySelectorAll('#container'); 
+// add an event listener to all buttons where when clicked it will play one round
+btns.addEventListener('click', () => {
+    oneRound(); 
+});
 
 //  // ERROR HANDLING
 //  if ((userChoice !== 'rock'.toUpperCase()) || (message !== 'paper'.toUpperCase()) || (message !== 'scissors'.toUpperCase())) {
