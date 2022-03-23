@@ -46,7 +46,7 @@ function roundWinner(userChoice, computerChoice) {
 // plays one round of rock paper scissors
 function oneRound() {
     let computerChoice = generateComputerChoice();
-    let userChoice = user(); 
+    let userChoice = getUserChoice(); 
     let winner = roundWinner(userChoice, computerChoice); 
     let finalMessage = `Player: ${userChoice}
 Bot Choice: ${computerChoice}
@@ -60,34 +60,19 @@ ${winner}`;
 
 
 
-function user() {
-    const btns = document.querySelectorAll('#container'); 
-    const rock = document.querySelector('#ROCK');
-    const paper = document.querySelector('#PAPER'); 
-    const scissors = document.querySelector('SCISSORS'); 
+function getUserChoice() {
+    const btns = document.querySelectorAll('.rps'); 
     // add an event listener to all buttons where when clicked it will play one round
     btns.forEach( button => {
         button.addEventListener('click', () => {
-            // oneRound()
-            if (button === rock) {
-                rock = 'ROCK'; 
-                console.log(rock); 
-                return rock; 
-            }
-            else if (button === paper) {
-                paper = 'PAPER'; 
-                console.log(paper); 
-                return paper; 
-            } 
-            else if (button === scissors) {
-                scissors = 'SCISSORS'
-                console.log(scissors)
-                return scissors;
-            }
-            // return rock paper or scissors    
+        const userChocie = button.dataset.selection;
+        // return rock paper or scissors  
+        console.log(userChocie); 
+        return userChocie;  
         });
     });
-}
+} 
+
   
 
 
