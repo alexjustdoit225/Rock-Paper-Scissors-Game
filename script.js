@@ -53,12 +53,11 @@ Bot Choice: ${computerChoice}
 ${winner}`;  
     console.log(finalMessage); 
 }
+
 // // plays five rounds
 // for (i = 0; i < 5; i++) {
 //     oneRound();
 // }
-
-
 
 function getUserChoice() {
     const btns = document.querySelectorAll('.rps'); 
@@ -73,7 +72,9 @@ function getUserChoice() {
     });
 } 
 
-  
+const div = document.createElement('div'); 
+
+
 
 
 //  // ERROR HANDLING
