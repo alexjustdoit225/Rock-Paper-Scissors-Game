@@ -1,3 +1,6 @@
+const resultsContent = document.createElement('div'); 
+const resultsContainer = document.querySelector('#container-results');
+
 function generateComputerChoice() {
     // create an array storing rock, paper, scissors
     const choices = ['ROCK', 'PAPER', 'SCISSORS']; 
@@ -18,28 +21,28 @@ function message() {
 function roundWinner(userChoice, computerChoice) { 
     // create if statements to determine what the roundWinnerText variable will say 
     if ((computerChoice === 'ROCK') && (userChoice === 'PAPER')){
-        return 'You Win! Paper covers rock.';
+        return resultsContent.textContent = 'You Win! Paper covers rock.';
     }
     else if ((computerChoice === 'ROCK') && (userChoice === 'SCISSORS')){
-        return 'You Lose! Rock smashes scissors.';
+        return resultsContent.textContent = 'You Lose! Rock smashes scissors.';
     }
     else if ((computerChoice === 'PAPER') && (userChoice === 'SCISSORS')){
-        return 'You Win! Scissors slices paper.';
+        return resultsContent.textContent = 'You Win! Scissors slices paper.';
     }
     else if ((computerChoice === 'PAPER') && (userChoice === 'ROCK')){
-        return 'You Lose! Paper cover rock.'; 
+        return resultsContent.textContent = 'You Lose! Paper cover rock.'; 
     }
     else if ((computerChoice === 'SCISSORS') && (userChoice === 'ROCK')){
-        return 'You Win! Rock smashes scissors.';
+        return resultsContent.textContent = 'You Win! Rock smashes scissors.';
     }
     else if ((computerChoice === 'SCISSORS') && (userChoice === 'PAPER')){
-        return 'You Lose! Scissors slices paper.';
+        return resultsContent.textContent = 'You Lose! Scissors slices paper.';
     } 
     else if ((computerChoice === userChoice)) {
-        return `It's a tie.`
+        return resultsContent.textContent = `It's a tie.`
     }
     else {
-        return `You did not pick ROCK, PAPER, or SCISSORS.`
+        return resultsContent.textContent = `You did not pick ROCK, PAPER, or SCISSORS.`
     }
 };
 
@@ -51,7 +54,8 @@ function oneRound() {
     let finalMessage = `Player: ${userChoice}
 Bot Choice: ${computerChoice}
 ${winner}`;  
-    console.log(finalMessage); 
+    console.log(finalMessage);
+    return finalMessage; 
 }
 
 // // plays five rounds
@@ -72,7 +76,8 @@ function getUserChoice() {
     });
 } 
 
-const div = document.createElement('div'); 
+resultsContent.setAttribute('id', 'resultsContent'); 
+resultsContent.style.backgroundColor = 'white'; 
 
 
 
